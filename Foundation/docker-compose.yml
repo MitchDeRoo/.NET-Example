@@ -1,0 +1,6 @@
+﻿services:
+  foundation:
+    image: foundation
+    build:
+      context: .
+      dockerfile: Foundation/Dockerfile

@@ -2,6 +2,7 @@ using FluentAssertions;
 using Foundation.Anomalies;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
+using NSubstitute.ReturnsExtensions;
 
 namespace Foundation.Tests.Controllers;
 
@@ -47,5 +48,50 @@ public class AnomalyControllerTests : TestDataBuilder
 
         var items = result.Value as IEnumerable<Anomaly>;
         items.Should().Contain(expectedItems);
+    }
+
+    [Fact]
+    public async Task GetById_OnSuccess_Returns_StatusCode_200()
+    {
+        var guid = Guid.NewGuid();
+        var anomaly = CreateAnomaly("SCP-999", "Safe", "Cute orange slime ball of fun");
+        _service.GetById(guid).Returns(anomaly);
+
+        var result = await _controller.GetById(guid) as OkObjectResult;
+
+        result.StatusCode.Should().Be(200);
+    }
+
+    [Fact]
+    public async Task GetById_OnSuccess_Invokes_AnomalyService()
+    {
+        var guid = Guid.NewGuid();
+
+        var result = await _controller.GetById(guid) as OkObjectResult;
+
+        _service.Received().GetById(guid);
+    }
+
+    [Fact]
+    public async Task GetById_OnSuccess_Returns_Item()
+    {
+        var guid = Guid.NewGuid();
+        var anomaly = CreateAnomaly("SCP-999", "Safe", "Cute orange slime ball of fun");
+        _service.GetById(guid).Returns(anomaly);
+
+        var result = await _controller.GetById(guid) as OkObjectResult;
+
+        var item = result.Value as Anomaly;
+        item.Should().Be(anomaly);
+    }
+
+    [Fact]
+    public async Task GetById_NoAnomalyFound_Returns_NotFound()
+    {
+        var guid = Guid.NewGuid();
+        _service.GetById(guid).ReturnsNull();
+
+        var result = await _controller.GetById(guid) as NotFoundResult;
+        result.StatusCode.Should().Be(404);
     }
 }

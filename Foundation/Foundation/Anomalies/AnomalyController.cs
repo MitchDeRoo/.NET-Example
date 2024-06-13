@@ -12,4 +12,15 @@ public class AnomalyController(IAnomalyService service) : ControllerBase
         var items = await service.GetAll();
         return Ok(items);
     }
+
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var anomaly = await service.GetById(id);
+        if (anomaly == null)
+        {
+            return NotFound();
+        }
+        return Ok(anomaly);
+    }
 }

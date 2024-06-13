@@ -1,7 +1,4 @@
-using Foundation.Models;
-using Foundation.Repositories;
-
-namespace Foundation.Services;
+namespace Foundation.Researchers;
 
 public class ResearcherService : IResearcherService
 {

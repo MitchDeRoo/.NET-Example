@@ -1,6 +1,6 @@
-using Foundation.Models;
+using Foundation.Core;
 
-namespace Foundation.Repositories;
+namespace Foundation.Researchers;
 
 public interface IResearcherRepository : IRepository<Researcher>
 {

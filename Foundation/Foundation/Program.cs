@@ -1,6 +1,6 @@
-using Foundation.Controllers;
-using Foundation.Repositories;
-using Foundation.Services;
+using Foundation.Anomalies;
+using Foundation.Core;
+using Foundation.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

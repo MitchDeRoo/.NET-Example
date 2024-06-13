@@ -1,4 +1,5 @@
-using Foundation.Models;
+using Foundation.Anomalies;
+using Foundation.Researchers;
 
 namespace Foundation.Tests;
 

@@ -1,6 +1,4 @@
-using Foundation.Models;
-
-namespace Foundation.Services;
+namespace Foundation.Anomalies;
 
 public interface IAnomalyService
 {

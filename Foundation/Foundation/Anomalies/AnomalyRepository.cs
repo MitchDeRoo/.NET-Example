@@ -1,7 +1,8 @@
-using Foundation.Models;
+using Foundation.Core;
+using Foundation.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Foundation.Repositories;
+namespace Foundation.Anomalies;
 
 public class AnomalyRepository : IAnomalyRepository
 {

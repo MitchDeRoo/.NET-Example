@@ -1,7 +1,5 @@
 using FluentAssertions;
-using Foundation.Controllers;
-using Foundation.Models;
-using Foundation.Services;
+using Foundation.Anomalies;
 using Microsoft.AspNetCore.Mvc;
 using NSubstitute;
 

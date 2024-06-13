@@ -1,4 +1,6 @@
-namespace Foundation.Models;
+using Foundation.Anomalies;
+
+namespace Foundation.Researchers;
 
 public class Researcher
 {

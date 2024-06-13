@@ -1,6 +1,5 @@
 using FluentAssertions;
-using Foundation.Repositories;
-using Foundation.Services;
+using Foundation.Researchers;
 using NSubstitute;
 
 namespace Foundation.Tests.Services;

@@ -1,4 +1,4 @@
-namespace Foundation.Models;
+namespace Foundation.Anomalies;
 
 public class Anomaly
 {

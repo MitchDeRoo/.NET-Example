@@ -1,4 +1,4 @@
-namespace Foundation.Repositories;
+namespace Foundation.Core;
 
 public interface IRepository<T>
 {

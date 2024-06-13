@@ -22,4 +22,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Foundation\Foundation.csproj" />
+    </ItemGroup>
+
 </Project>

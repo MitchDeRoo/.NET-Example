@@ -23,4 +23,23 @@ public class TestDataBuilder
             CreateAnomaly("SCP-682", "Keter", "Hard To Destroy Reptile")
         ];
     }
+
+    public IEnumerable<Researcher> CreateTestResearchers()
+    {
+        return
+        [
+            CreateResearcher("Jack", "Bright"),
+            CreateResearcher("Mark", "Gears"),
+        ];
+    }
+
+    public Researcher CreateResearcher(string firstName, string lastName)
+    {
+        return new Researcher
+        {
+            Id = Guid.NewGuid(),
+            FirstName = firstName,
+            LastName = lastName,
+        };
+    }
 }

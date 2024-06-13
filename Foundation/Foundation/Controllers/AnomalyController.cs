@@ -5,19 +5,12 @@ namespace Foundation.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class AnomalyController : ControllerBase
+public class AnomalyController(IAnomalyService service) : ControllerBase
 {
-    private readonly IAnomalyService _service;
-
-    public AnomalyController(IAnomalyService service)
-    {
-        _service = service;
-    }
-
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-        var items = await _service.GetAll();
+        var items = await service.GetAll();
         return Ok(items);
     }
 }

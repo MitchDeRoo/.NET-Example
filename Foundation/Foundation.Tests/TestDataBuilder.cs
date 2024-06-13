@@ -1,4 +1,3 @@
-using Foundation.Controllers;
 using Foundation.Models;
 
 namespace Foundation.Tests;
@@ -14,5 +13,14 @@ public class TestDataBuilder
             ObjectClass = objectClass,
             Description = description
         };
+    }
+
+    public IEnumerable<Anomaly> CreateTestAnomalies()
+    {
+        return [
+            CreateAnomaly("SCP-173", "Euclid", "Statue made of rebar, concrete and spray paint"),
+            CreateAnomaly("SCP-999", "Safe", "Cute orange-yellow slime made of happiness and joy"),
+            CreateAnomaly("SCP-682", "Keter", "Hard To Destroy Reptile")
+        ];
     }
 }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Foundation.Researchers;
 
-[Route("api/[controller]")]
+[Route("api/researchers")]
 [ApiController]
 public class ResearcherController(IResearcherService service) : ControllerBase
 {

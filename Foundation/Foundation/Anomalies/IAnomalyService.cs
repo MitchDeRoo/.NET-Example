@@ -3,5 +3,5 @@ namespace Foundation.Anomalies;
 public interface IAnomalyService
 {
     Task<IEnumerable<Anomaly>> GetAll();
-    Task<Anomaly> GetById(Guid guid);
+    Task<Anomaly?> GetById(Guid guid);
 }

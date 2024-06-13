@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Foundation.Anomalies;
 
-[Route("api/[controller]")]
+[Route("api/anomalies")]
 [ApiController]
 public class AnomalyController(IAnomalyService service) : ControllerBase
 {

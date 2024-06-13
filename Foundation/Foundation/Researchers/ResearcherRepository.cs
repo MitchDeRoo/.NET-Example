@@ -1,3 +1,4 @@
+using Foundation.Anomalies;
 using Microsoft.EntityFrameworkCore;
 
 namespace Foundation.Researchers;
@@ -16,7 +17,7 @@ public class ResearcherRepository : IResearcherRepository
         return await _context.Researchers.ToListAsync();
     }
 
-    public async Task<Researcher> Get(Guid id)
+    public async Task<Researcher?> Get(Guid id)
     {
         return await _context.Researchers.FindAsync(id);
     }

@@ -17,7 +17,7 @@ public class AnomalyRepository : IAnomalyRepository
         return await _context.Anomalies.ToListAsync();
     }
 
-    public async Task<Anomaly> Get(Guid id)
+    public async Task<Anomaly?> Get(Guid id)
     {
         return await _context.Anomalies.FindAsync(id);
     }

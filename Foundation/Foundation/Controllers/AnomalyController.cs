@@ -1,3 +1,4 @@
+using Foundation.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foundation.Controllers;
@@ -16,7 +17,7 @@ public class AnomalyController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-        var items = _service.GetAll();
+        var items = await _service.GetAll();
         return Ok(items);
     }
 }

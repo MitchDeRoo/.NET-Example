@@ -1,4 +1,4 @@
-namespace Foundation.Controllers;
+namespace Foundation.Models;
 
 public class Anomaly
 {

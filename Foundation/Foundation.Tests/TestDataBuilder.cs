@@ -1,4 +1,5 @@
 using Foundation.Controllers;
+using Foundation.Models;
 
 namespace Foundation.Tests;
 

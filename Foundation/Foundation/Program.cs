@@ -3,8 +3,8 @@ using Foundation.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-ConfigureServices(builder.Services);
-
+builder.Services.AddTransient<IAnomalyService, AnomalyService>();
+builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -22,8 +22,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-void ConfigureServices(IServiceCollection services)
-{
-    services.AddTransient<IAnomalyService, AnomalyService>();
-}

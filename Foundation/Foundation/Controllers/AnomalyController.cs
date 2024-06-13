@@ -13,10 +13,10 @@ public class AnomalyController : ControllerBase
         _service = service;
     }
 
-    [HttpGet(Name = "GetAnomalies")]
+    [HttpGet]
     public async Task<IActionResult> Get()
     {
-        var items = await _service.GetAll();
+        var items = _service.GetAll();
         return Ok(items);
     }
 }

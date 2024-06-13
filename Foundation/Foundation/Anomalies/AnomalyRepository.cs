@@ -1,5 +1,4 @@
 using Foundation.Core;
-using Foundation.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Foundation.Anomalies;

@@ -1,4 +1,3 @@
-using Foundation.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Foundation.Researchers;

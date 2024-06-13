@@ -2,7 +2,7 @@ using Foundation.Anomalies;
 using Foundation.Researchers;
 using Microsoft.EntityFrameworkCore;
 
-namespace Foundation.Data;
+namespace Foundation;
 
 public class FoundationContext : DbContext
 {

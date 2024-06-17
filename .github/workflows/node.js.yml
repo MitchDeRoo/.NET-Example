@@ -18,6 +18,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
+        working-directory: ./react-app
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Setup and run tests

@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+defaults:
+  run:
+    working-directory: web
+
 jobs:
   build:
     name: Build and Test Project
@@ -18,11 +22,9 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        working-directory: ./react-app
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Setup and run tests
-      working-directory: ./react-app
       run: |
         npm ci
         npm run build --if-present

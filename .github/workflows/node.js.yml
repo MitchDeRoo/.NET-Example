@@ -8,7 +8,7 @@ on:
 
 defaults:
   run:
-    working-directory: web
+    working-directory: react-app
 
 jobs:
   build:
@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: './react-app'
     - name: Setup and run tests
       run: |
         npm ci

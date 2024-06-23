@@ -13,6 +13,7 @@ builder.Services.AddScoped<IResearcherRepository, ResearcherRepository>();
 builder.Services.AddTransient<IAnomalyService, AnomalyService>();
 builder.Services.AddTransient<IResearcherService, ResearcherService>();
 
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
